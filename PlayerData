@@ -1,0 +1,34 @@
+-- PlayerData Script
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+-- Create or get existing leaderstats for each player
+local function onPlayerAdded(player)
+	local leaderstats = Instance.new("Folder")
+	leaderstats.Name = "leaderstats"
+	leaderstats.Parent = player
+
+	local maxNodes = Instance.new("IntValue")
+	maxNodes.Name = "MaxNodes"
+	maxNodes.Value = 5 -- Default value
+	maxNodes.Parent = leaderstats
+
+	local maxOresPerNode = Instance.new("IntValue")
+	maxOresPerNode.Name = "MaxOresPerNode"
+	maxOresPerNode.Value = 3 -- Default value
+	maxOresPerNode.Parent = leaderstats
+
+	local nodeSpawnTime = Instance.new("IntValue")
+	nodeSpawnTime.Name = "NodeSpawnTime"
+	nodeSpawnTime.Value = 10 -- Default value (time in seconds)
+	nodeSpawnTime.Parent = leaderstats
+
+	local money = Instance.new("IntValue")
+	money.Name = "Money"
+	money.Value = 0 -- Default value
+	money.Parent = leaderstats
+
+	local oreValueMultiplier = Instance.new("IntValue")
+	oreValueMultiplier.Name = "OreValueMultiplier"
+	end
+
